@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+       "nav"
+       "filtros"
+       "main"
+       "footer";
+    grid-template-rows: 60px/*nav*/ 60px/*filtros*/ 1fr/*principal*/ 60px/*footer*/; 
+    height: 100%;
+    width: 100%;
+}
+
+.nav-section {
+    color: white; 
+    background: #00509E; 
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.nav-section > .logo {
+    display: flex;
+    gap: 5px;
+}
+
+.nav-section > ul {
+    display: none;
+}
+
+.logo {
+    display: flex;
+    gap: 5px;
+}
+
+.filtros-section {
+    grid-area: filtros;
+    background-color: #606c68;
+    align-items: center; 
+    display: flex;
+    flex-direction: column;
+}
+
+.filtros-section > .opcion {
+    width: 280px;
+    height: 35px;
+    padding-left: 5px;
+}
+
+.main-section {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-section > .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px; 
+    gap: 10px;
+}
+
+.main-section > .card-container > .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 0;
+    gap: 15px;
+    height: fit-content;
+    width: 220px;
+    border: 1px solid #ccc; /* Define un borde delgado */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* una sombra suave */
+}
+
+.card-container > .card > img {
+    width: 200px;
+    height: 300px;
+}
+
+.main-section p {
+    margin: 10px 0;
+}
+
+.main-section > .card-container > .card > button {
+    background-color: #00509E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.main-section > .navegador {
+    display: flex;
+}
+
+.navegador > button {
+    background-color: #00509E;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.footer {
+    grid-area: footer; 
+    background: #606c68; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer > div {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 3px;
+}
+
+@media (min-width: 576px) { 
+    .container {
+        grid-template-areas:
+           "nav filtros"
+           "nav main"
+           "footer main";
+        grid-template-columns: 150px 1fr;
+        grid-template-rows: 60px 1fr 60px; 
+    }
+    .main-section > .card-container {
+        flex-direction: row; 
+        flex-wrap: wrap;
+    }
+    .nav-section {
+        flex-direction: column;
+        justify-content: start;
+        gap: 35px;
+        padding: 15px;
+    }
+    .nav-section > ul {
+        list-style: none;
+    }
+    .nav-section > ul {
+        display: block;
+    }
+    .nav-section > .logos {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-section > .logos > h1 {
+        text-align: center;
+    }
+    .nav-section > .bars {
+        display: none;
+    }
+}
